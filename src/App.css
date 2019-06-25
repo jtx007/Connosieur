@@ -1,0 +1,374 @@
+.nav-wrapper {
+  background-color: rgba(73, 7, 7, 0.746);
+  margin: 0px;
+}
+
+html {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+body {
+  background-color: rgba(179, 178, 184, 0.329);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+
+.App {
+  margin: 0px;
+}
+
+input {
+  color: black !important;
+}
+
+.nav {
+  margin: 0px;
+  width: 30vw;
+  background-color: rgba(141, 36, 36, 0.603);
+  -webkit-box-shadow: 0 10px 6px -6px whitesmoke !important;
+  -moz-box-shadow: 0 10px 6px -6px whitesmoke !important;
+  box-shadow: 0 10px 6px -6px whitesmoke !important;
+}
+
+.footer {
+  background-color: rgba(73, 7, 7, 0.746);
+  height: 7vh;
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 auto;
+  justify-content: space-around;
+}
+
+#footer-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+#footer-icon:hover {
+  background: rgba(121, 121, 121, 0.555);
+}
+
+.page-footer {
+  padding: 0;
+  
+}
+#footer-link {
+  font-family: 'Montserrat',
+  sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+html {
+  margin: 0px;
+}
+
+body {
+  margin: 0px
+}
+
+
+  .Home {
+  background-image: url('https://78.media.tumblr.com/67576a8830b440b8359709ab1bd69bd5/tumblr_nzq68hELoM1up9ckeo1_500.gif'), url('https://gifer.com/i/X50p.gif'), url('https://78.media.tumblr.com/95a9990ee09692b28dc422922f38dbfc/tumblr_nv1nu43JRf1up9ckeo1_500.gif');
+  background-repeat: no-repeat;
+  background-position: right top, center top, left top;
+  background-size: 37.5rem 68rem;
+  margin-top: 0px;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+
+
+.profile-pic {
+ 
+  height: 10rem !important;
+}
+
+.brand-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 78px;
+  text-shadow: 2px 1px rgba(219, 7, 43, 0.787);
+  text-decoration-color: black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: rgba(167, 58, 58, 0.404);
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 300;
+}
+
+.title {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+
+}
+
+.btn-flat {
+  color: white;
+  text-shadow: 2px 3px black;
+  font-family: 'Montserrat',
+  sans-serif;
+
+}
+
+.icon {
+  width: 4.3rem;
+
+}
+
+.input1 {
+  margin-left: 35rem;
+  margin-right: 30rem;
+  width: 37rem;
+  padding-top: 8rem;
+}
+
+.input2 {
+  margin-left: 35rem;
+  margin-right: 30rem;
+  width: 37rem;
+}
+
+.register-btn {
+  margin-left: 49rem;
+}
+
+.login-btn {
+  margin-left: 49rem;
+}
+
+.form-title {
+  margin-top: -3rem;
+  margin-left: 10rem;
+}
+
+.form-title2 {
+  margin-top: -3rem;
+  margin-left: 12rem;
+}
+
+.post-btn {
+  margin-left: 13rem !important;
+}
+
+.card {
+  width: 25rem !important;
+  height: 25rem !important;
+   -webkit-box-shadow: 0 10px 6px -6px black !important;
+   -moz-box-shadow: 0 10px 6px -6px black !important;
+   box-shadow: 0 7px 7px -6px black !important;
+  border-radius: 40px;
+}
+
+.shoe-page {
+  min-height: 100vh;
+}
+
+
+.shoe-pic {
+  height: 13rem;
+  width: 17rem !important;
+  margin-left: 3rem;
+  margin-top: .5rem;
+  
+}
+
+.row {
+  display: inline-block !important;
+
+}
+
+.shoe-container {
+  align-content: center;
+  margin-left: 10rem;
+  width: 80vw;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.app-header {
+  display: block;
+  position: absolute;
+  margin-top: 6rem;
+  margin-left: 29rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: rgba(209, 17, 59, 0.712);
+  text-decoration-style: solid;
+  text-shadow: 1px 3px red;
+  text-decoration: black;
+  text-align: center;
+
+}
+
+.button1 {
+  margin-right: 1rem;
+}
+
+.card-content {
+  overflow: scroll !important;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 20px;
+}
+
+.card-action {
+  color: black !important;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  text-align: center;
+  width: 24rem;
+}
+
+
+.profile-pic-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.profile-container {
+  margin-top: 3rem;
+  padding: 1rem 5rem 10rem;
+  width: 100vw;
+}
+
+.profile-info-container {
+  margin-left: 5rem;
+  padding: 0 2rem;
+}
+
+.activity-container {
+  border: 1px solid black;
+  box-shadow: 20px 15px 1px #ccc;
+  width: 25rem;
+  height: 20rem;
+  overflow: scroll;
+}
+
+.sneakers-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+
+.owned-sneakers-container {
+  width: 33vw;
+  height: 70vh;
+}
+
+.owned-sneakers {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: inherit;
+  overflow: scroll;
+  justify-content: center;
+  border: 1px solid black;
+  box-shadow: 20px 15px 1px #ccc;
+}
+
+.wanted-sneakers-container {
+  width: 33vw;
+  height: 70vh;
+  
+}
+
+.wanted-sneakers {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: inherit;
+  overflow: scroll;
+  justify-content: center;
+  border: 1px solid black;
+  box-shadow: 20px 15px 1px #ccc;
+}
+
+.basic-text-format {
+  color: white;
+}
+
+.profile-info-and-activity-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+}
+
+.comments-container {
+  height: 10vh;
+  overflow: scroll;
+}
+
+.card {
+  height: 50vh !important;
+}
+
+.shoe-search {
+  width: 20vw;
+  margin-left: 10rem;
+}
+
+
+
+.new-post-button {
+  background-color: rgb(0, 0, 0) !important;
+  color: black;
+}
+
+
+
+.shoe-cards-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: palevioletred;
+}
+
+.activity-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.activity-text {
+  padding: 0 3rem ;
+
+}
+
+.thread-page {
+  min-height: 100vh;
+}
+
+.thread-card {
+  background: rgba(0, 0, 0, 0.37);
+}
+
+.btn-small {
+  background-color: rgba(128, 128, 128, 0.411);
+  font-family: 'Archivo Black', sans-serif;
+
+  color: rgba(255, 0, 0, 0.719);
+}
