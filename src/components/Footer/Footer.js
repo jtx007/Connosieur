@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import Github from './githubicon.png'
 import Medium from './mediumicon.png'
 import Linkedin from './linkedinicon.png'

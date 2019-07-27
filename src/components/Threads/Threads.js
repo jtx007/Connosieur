@@ -51,7 +51,7 @@ class Threads extends Component {
         console.log(this.state.threads)
         return (
             <div className="thread-page">
-                <ul className="collection">
+                <ul className="allthreads">
                 {this.genThreads(this.state.threads)}
                 </ul>
             </div>

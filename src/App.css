@@ -6,12 +6,14 @@
 html {
   color: black;
   font-family: 'Montserrat', sans-serif;
-
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   background-color: rgba(179, 178, 184, 0.329);
-  min-height: 100vh;
+  height: 100%;
+  overflow: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,22 +40,20 @@ input {
 
 .footer {
   background-color: rgba(73, 7, 7, 0.746);
-  height: 7vh;
+  height: 6vh;
   display: flex;
-  flex-direction: row !important;
   align-items: center;
-  margin: 0 auto;
-  padding: 0 auto;
   justify-content: space-around;
 }
 
 #footer-icon {
-  height: 2rem;
-  width: 2rem;
+  height: 32px;
+  width: 32px;
+  transition: all .3s ease-in-out;
 }
 
 #footer-icon:hover {
-  background: rgba(121, 121, 121, 0.555);
+  transform: scale(1.5);
 }
 
 .page-footer {
@@ -67,20 +67,14 @@ input {
   color: white;
 }
 
-html {
-  margin: 0px;
-}
 
-body {
-  margin: 0px
-}
 
 
   .Home {
   background-image: url('https://78.media.tumblr.com/67576a8830b440b8359709ab1bd69bd5/tumblr_nzq68hELoM1up9ckeo1_500.gif'), url('https://gifer.com/i/X50p.gif'), url('https://78.media.tumblr.com/95a9990ee09692b28dc422922f38dbfc/tumblr_nv1nu43JRf1up9ckeo1_500.gif');
   background-repeat: no-repeat;
   background-position: right top, center top, left top;
-  background-size: 37.5rem 68rem;
+  background-size: 60vh;
   margin-top: 0px;
   height: 100vh;
   width: 100vw;
@@ -149,6 +143,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 49rem;
 }
 
+form {
+  height: 100vh;
+}
+
+
 .form-title {
   margin-top: -3rem;
   margin-left: 10rem;
@@ -166,15 +165,13 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   width: 25rem !important;
   height: 25rem !important;
-   -webkit-box-shadow: 0 10px 6px -6px black !important;
-   -moz-box-shadow: 0 10px 6px -6px black !important;
-   box-shadow: 0 7px 7px -6px black !important;
-  border-radius: 40px;
+  -webkit-box-shadow: 0 10px 6px -6px black !important;
+  -moz-box-shadow: 0 10px 6px -6px black !important;
+  box-shadow: 0 7px 7px -6px black !important;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 
-.shoe-page {
-  min-height: 100vh;
-}
 
 
 .shoe-pic {
@@ -183,6 +180,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 3rem;
   margin-top: .5rem;
   
+}
+
+.shoe-page {
+  height: 100vh;
+  overflow: auto;
 }
 
 .row {
@@ -304,7 +306,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .basic-text-format {
-  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: black;
 }
 
 .profile-info-and-activity-container {
@@ -324,6 +328,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .shoe-search {
   width: 20vw;
+  height: 20vh;
+
   margin-left: 10rem;
 }
 
@@ -339,6 +345,11 @@ h1, h2, h3, h4, h5, h6 {
 .shoe-cards-container {
   display: flex;
   flex-direction: column;
+}
+
+.shoe-card {
+  background-color: rgba(245, 183, 183, 0.164);
+  border-radius: 10px;
 }
 
 .container-title {
@@ -359,16 +370,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .thread-page {
-  min-height: 100vh;
+  height: 100vh;
+  
+}
+
+.allthreads {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .thread-card {
-  background: rgba(0, 0, 0, 0.37);
+  background: rgba(255, 250, 250, 0.109);
+  padding: 20px;
 }
 
 .btn-small {
-  background-color: rgba(128, 128, 128, 0.411);
+  background-color: rgba(128, 128, 128, 0.164);
   font-family: 'Archivo Black', sans-serif;
 
-  color: rgba(255, 0, 0, 0.719);
+  color: rgba(104, 2, 2, 0.938);
 }

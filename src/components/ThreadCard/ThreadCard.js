@@ -89,10 +89,12 @@ class ThreadCard extends Component {
 
                 <button onClick={this.addLikes} className="button1 waves-effect waves-light btn-small"><i className="material-icons"> arrow_upward </i>Likes:  {this.state.likes} </button>
                 <button onClick={this.addDislikes} className="waves-effect waves-light btn-small"><i className="material-icons">arrow_downward</i>Dislikes  {this.state.dislikes}</button>
+                <br />
                 <h6 className="basic-text-format">Comments</h6>
                 <button className="button1 waves-effect waves-light btn-small" onClick={this.showCommentInput}>add comment</button>
                 {this.state.showCommentInput ? 
                 <form onSubmit={this.addComment}>
+                
                 <input className="basic-text-format" onChange={this.handleChange} value={this.state.comment} />
                 <button type="submit" className="button1 waves-effect waves-light btn-small" >Reply</button>
                 </form>

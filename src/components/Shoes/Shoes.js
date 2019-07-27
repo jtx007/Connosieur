@@ -55,7 +55,7 @@ export default class Shoes extends Component {
         
         return (
             <div className="shoe-page">
-            <form onSubmit={this.searchForShoes}>
+            <form className="shoe-search" onSubmit={this.searchForShoes}>
             <div className="shoe-search input-field col 6">
             <p><input placeholder="Search Shoes here" onChange={this.handleChange} value={this.state.term} /> 
             <button type="submit">Search</button></p>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar/NavBar'
 import Threads from './components/Threads/Threads'
-import { Route, Link, withRouter } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Login  from './components/Login/Login'
 import Home from './components/Home/Home'
@@ -19,7 +19,7 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-   this.checkIfUserLogin()
+    this.checkIfUserLogin()
   }
 
   checkIfUserLogin = () => {
