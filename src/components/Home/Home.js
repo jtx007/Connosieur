@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import adapters from '../adapters'
 
 export default class Home extends Component {
+
+    componentDidMount() {
+        adapters.pingHeroku()
+    }
+
     render() {
         return (
             <div className="Home">

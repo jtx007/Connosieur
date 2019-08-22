@@ -14,8 +14,7 @@ const NavBar = ({loggedIn, logoutAction}) => {
   
   return (
       <nav>
-        <div className="nav-wrapper">
-          <Link to='/' href="#" className="brand-logo title">Connosieur</Link>
+          <div className="nav-wrapper">
           <ul id="nav-mobile" className="center hide-on-med-and-down right">
             <li><Link to='/' className="waves-effect waves-red btn-flat" >Home</Link></li>
             <li><Link to='/shoes' className="waves-effect waves-red btn-flat" >Shoes</Link></li>

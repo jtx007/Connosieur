@@ -26,7 +26,6 @@ class otherUser extends Component {
 
 
     render() {
-        console.log(this.props.user)
         if (!this.props.user) {
             return <Redirect to='/threads' />
         } else {

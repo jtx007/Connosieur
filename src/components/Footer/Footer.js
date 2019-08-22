@@ -10,9 +10,9 @@ export default class Footer extends Component {
                 <div className="footer">
                     <h6>Made by James Thomas</h6>
                     
-                        <a id="footer-link" href="https://github.com/jtx007" target="_blank"><img id="footer-icon" src={Github} /></a>
-                        <a id="footer-link" href="https://medium.com/@jamesjacobthomas7" target="_blank"><img  id="footer-icon" src={Medium} /></a>
-                        <a id="footer-link"href="https://www.linkedin.com/in/james-thomas007/" target="_blank"><img id="footer-icon" src={Linkedin}/></a>
+                        <a id="footer-link" href="https://github.com/jtx007" rel="noopener noreferrer" target="_blank"><img id="footer-icon" src={Github} alt="github-icon" /></a>
+                        <a id="footer-link" href="https://medium.com/@jamesjacobthomas7" rel="noopener noreferrer" target="_blank"><img  id="footer-icon" src={Medium} alt="medium-icon" /></a>
+                        <a id="footer-link"href="https://www.linkedin.com/in/james-thomas007/" rel="noopener noreferrer" target="_blank"><img id="footer-icon" src={Linkedin} alt="linkedin-icon"/></a>
                     
                 </div>
             </footer>

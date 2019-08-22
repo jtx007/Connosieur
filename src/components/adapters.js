@@ -1,5 +1,6 @@
 
 const adapters = {
+    pingHeroku: wakeHeroku,
     userCreate: postUserFetch,
     userLogin: postLoginFetch,
     allThreads: allThreads,
@@ -16,9 +17,16 @@ const adapters = {
 export default adapters
 
 
+function wakeHeroku() {
+    return fetch('https://connosieurbackend.herokuapp.com/api/v1/users/ping')
+    .then(r => r.json())
+    .then(data => console.log(data))
+}
+
+
 function postUserFetch(user){
 
-   return fetch('https://connosieurbackend.herokuapp.com/api/v1/users', {
+    return fetch('https://connosieurbackend.herokuapp.com/api/v1/users', {
         method: "POST",
         body: JSON.stringify({user: {username: user.username, password: user.password, city: user.city, age: user.age, avatarUrl: user.avatar}}),
         headers: {

@@ -72,7 +72,6 @@ import ShoeCard from '../ShoeCard/ShoeCard'
     
 
     render() {
-        console.log(this.state.own)
     if (this.props.loggedIn && this.props.currentUser) {
             return (
             <div className="profile-container"> 

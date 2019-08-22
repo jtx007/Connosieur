@@ -36,7 +36,6 @@ function log_status(state = {
                 current_user: {attributes: {}},
                 loggedIn: true
             }
-            console.log(stuff)
             return stuff
         case 'LOG_OUT':
             localStorage.clear()

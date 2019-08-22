@@ -1,6 +1,11 @@
+nav {
+  color: white;
+}
 .nav-wrapper {
   background-color: rgba(73, 7, 7, 0.746);
   margin: 0px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 html {
@@ -95,7 +100,8 @@ input {
   text-decoration-color: black;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: rgba(167, 58, 58, 0.404);
+  color: white !important;
+  margin-right: 10rem !important;
 }
 
 h1, h2, h3, h4, h5, h6 {

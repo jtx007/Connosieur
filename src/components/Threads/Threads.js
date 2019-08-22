@@ -48,7 +48,6 @@ class Threads extends Component {
 
 
     render() {
-        console.log(this.state.threads)
         return (
             <div className="thread-page">
                 <ul className="allthreads">
