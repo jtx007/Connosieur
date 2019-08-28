@@ -9,10 +9,11 @@ Try out the application with the following credentials:
 #### Password: 123
 
 
-
-This project was built using Ruby on Rails for the backend (located here at [ConnossieurBackend](https://github.com/jtx007/ConnosieurBackend)). The frontend was built with Javascript and React.js and the CSS used is from an external library called Materialize CSS, loosely based on Google's Material UI.  
-
-
+## Tech Stack: 
+- React
+- Redux
+- Ruby on Rails ([backend repo](https://github.com/jtx007/ConnosieurBackend))
+- Materialize-CSS
 
 ![Connosiuer](/connosieur.png)
 
