@@ -1,0 +1,14 @@
+
+
+
+.homepage {
+    background-image: url('https://i.pinimg.com/originals/46/73/75/4673758cf4f04cf6ef9ea422c3285872.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    opacity: 0.7;
+    margin: 0;
+    padding: 0;
+
+}

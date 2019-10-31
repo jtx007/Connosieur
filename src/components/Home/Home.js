@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
-import adapters from '../adapters'
+import React from 'react'
+import './home.css'
 
-export default class Home extends Component {
 
-    componentDidMount() {
-        adapters.pingHeroku()
-    }
-
-    render() {
-        return (
-            <div className="Home">
-                <h3 className="app-header">A place for sneaker enthusiasts to talk shop</h3>
-            </div> 
-        )
-
-    }
+const Home = () => {
+    return (
+        <div className="homepage">
+            
+        </div>
+    )
 }
+export default Home
