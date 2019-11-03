@@ -1,30 +1,15 @@
 
-const adapters = {
-    pingHeroku: wakeHeroku,
-    userCreate: postUserFetch,
-    userLogin: postLoginFetch,
-    allThreads: allThreads,
-    getCurrentUser: fetchCurrentUserProfile,
-    createThread: postThreadFetch,
-    addToWant: postWantSneakers,
-    addToOwn: postOwnSneakers,
-    deleteFromOwn: deleteOwnSneakers,
-    deleteFromWant: deleteWantSneakers,
-    addComment: addComment,
-    getAnotherUserProfile: fetchOtherUserDetails
-}
-
-export default adapters
 
 
-function wakeHeroku() {
+
+export function pingHeroku() {
     return fetch('https://connosieurbackend.herokuapp.com/api/v1/users/ping')
     .then(r => r.json())
     .then(data => console.log(data))
 }
 
 
-function postUserFetch(user){
+export function userCreate(user){
 
     return fetch('https://connosieurbackend.herokuapp.com/api/v1/users', {
         method: "POST",
@@ -37,7 +22,7 @@ function postUserFetch(user){
 }
 
 
-function postLoginFetch(user) {
+export function userLogin(user) {
     return fetch('https://connosieurbackend.herokuapp.com/user_token', {
         "method": "POST",
         "body": JSON.stringify({auth: {username: user.username, password: user.password}}),
@@ -49,12 +34,12 @@ function postLoginFetch(user) {
 }
 
 
-function allThreads() {
+export function allThreads() {
     return fetch('https://connosieurbackend.herokuapp.com/api/v1/posts')
 }
 
 
-function fetchCurrentUserProfile() {
+export function getCurrentUser() {
     return fetch('https://connosieurbackend.herokuapp.com/api/v1/users/me', {
         "method": "GET",
         "headers": {
@@ -64,7 +49,7 @@ function fetchCurrentUserProfile() {
     
 }
 
-function postThreadFetch(thread, id) {
+export function createThread(thread, id) {
     return fetch('https://connosieurbackend.herokuapp.com/api/v1/posts', {
         "method": "POST",
         "body": JSON.stringify({post: {title: thread.title, body: thread.body, user_id: id }}),
@@ -78,7 +63,7 @@ function postThreadFetch(thread, id) {
 }
 
 
-function postWantSneakers(shoe_id, user) {
+export function addToWant(shoe_id, user) {
     return fetch('https://connosieurbackend.herokuapp.com/api/v1/want_sneakers', {
         "method": "POST",
         "body": JSON.stringify({want_sneaker:{user_id: user, sneaker_id: shoe_id}}),
@@ -90,7 +75,7 @@ function postWantSneakers(shoe_id, user) {
     })
 } 
 
-function postOwnSneakers(shoe_id, user) {
+export function addToOwn(shoe_id, user) {
     return fetch('https://connosieurbackend.herokuapp.com/api/v1/own_sneakers', {
         "method": "POST",
         "body": JSON.stringify({own_sneaker:{user_id: user, sneaker_id: shoe_id}}),
@@ -102,7 +87,7 @@ function postOwnSneakers(shoe_id, user) {
     })
 }
 
-function deleteOwnSneakers(id) {
+export function deleteFromOwn(id) {
     return fetch(`https://connosieurbackend.herokuapp.com/api/v1/own_sneakers/${id}`, {
         "method": "DELETE",
         "headers": {
@@ -113,7 +98,7 @@ function deleteOwnSneakers(id) {
     })
 }
 
-function deleteWantSneakers(id) {
+export function deleteFromWant(id) {
     return fetch(`https://connosieurbackend.herokuapp.com/api/v1/want_sneakers/${id}`,{
         "method": "DELETE",
         "headers": {
@@ -124,7 +109,7 @@ function deleteWantSneakers(id) {
     })
 }
 
-function addComment(user_id, post_id, comment) {
+export function addComment(user_id, post_id, comment) {
     return fetch('https://connosieurbackend.herokuapp.com/api/v1/comments', {
         "method": "POST",
         "body": JSON.stringify({comment: {text: comment, user_id: user_id, post_id: post_id }}),
@@ -136,7 +121,7 @@ function addComment(user_id, post_id, comment) {
     })
 }
 
-function fetchOtherUserDetails(user) {
+export function getAnotherUserProfile(user) {
     return fetch(`https://connosieurbackend.herokuapp.com/api/v1/users/${user}`)
 
 }
