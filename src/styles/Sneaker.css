@@ -1,0 +1,31 @@
+.sneakerpage {
+    height: 95vh;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    overflow: scroll;
+}
+
+.sneakergrid {
+    margin: 5rem auto;
+}
+
+.sneakercardcontent {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-button {
+    margin-top: 1rem;
+}

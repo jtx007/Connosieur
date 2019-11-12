@@ -125,3 +125,8 @@ export function getAnotherUserProfile(user) {
     return fetch(`https://connosieurbackend.herokuapp.com/api/v1/users/${user}`)
 
 }
+
+
+export function fetchSneakerData() {
+    return fetch('https://connosieurbackend.herokuapp.com/api/v1/sneakers')
+}

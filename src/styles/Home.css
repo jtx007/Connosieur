@@ -1,0 +1,13 @@
+
+
+
+.homepage {
+    background-image: url('../assets/homepage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 95vh;
+    margin: 0;
+    padding: 0;
+
+}

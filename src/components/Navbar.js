@@ -1,30 +1,65 @@
 import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from '@reach/router'
+import Navlink from './Navlink'
 import dunk from '../assets/dunk.ico'
+import { LoginContext } from '../context/loginContext'
 
-const Navbar = () => {
+const Navbar = ({token, user_id, setUser, setToken}) => {
+    
+    
+    
+    const logout = () => {
+        localStorage.clear()
+        setToken('')
+        setUser('')
+    }
+    
+   
+
+    
+
+    const renderNavLinks = () => {
+        if (token && user_id) {
+            return (
+                <>
+                <Navlink  to="/profile" >
+                    Profile
+                </Navlink>
+                <button onClick={logout} className="button is-dark">Logout</button>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <Navlink  to="/login" >
+                            Login
+                    </Navlink>
+                    <Navlink  to="/register" >
+                        Register
+                    </Navlink>
+                </>
+            )
+        }
+    }
+
+    
     return (
         <nav style={{paddingRight: "10px"}}  className="navbar is-dark" role="navigation" aria-label="main-navigation">
             <div className="navbar-brand is-large">
                 <Link to="/" className="navbar-item">
                     <img src={dunk} alt="nike dunk"/>
-                    <h1 className="is-size-3 has-text-weight-semibold">Connosieur</h1>
+                    <h1 style={{paddingLeft: "10px"}} className="is-size-3 has-text-weight-semibold">Connosieur</h1>
                 </Link>
             </div>
             <div className="navbar-end">
                 <div className="buttons">
-                    <NavLink exact to="/" className="button is-dark is-light" activeClassName="is-warning is-light">
+                    <Navlink  to="/" >
                         Home
-                    </NavLink>
-                    <NavLink exact to="/sneakers" className="button is-dark is-light" activeClassName="is-warning is-light">
+                    </Navlink>
+                    <Navlink  to="/sneakers" >
                         Sneakers
-                    </NavLink>
-                    <NavLink exact to="/login" className="button is-dark is-light" activeClassName="is-warning is-light">
-                        Login
-                    </NavLink>
-                    <NavLink exact to="/register" className="button is-dark is-light" activeClassName="is-warning is-light">
-                        Register
-                    </NavLink>
+                    </Navlink>
+                    {renderNavLinks()}
                 </div>
 
             </div>
@@ -32,4 +67,14 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+const NavbarWithContext = () => {
+    return (
+        <LoginContext.Consumer>
+            {value => {
+                return <Navbar {...value} />
+            }}
+        </LoginContext.Consumer>
+    )
+}
+
+export default NavbarWithContext
