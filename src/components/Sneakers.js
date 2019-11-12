@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { fetchSneakerData } from '../api/adapters'
+import { fetchSneakerData, sneakerSearch } from '../api/adapters'
 import SneakerTile from './SneakerTile'
 import { LoginContext } from "../context/loginContext";
 
@@ -7,13 +7,34 @@ import '../styles/Sneaker.css'
 const Sneakers = () => {
 
     const [sneakers, setSneakers] = useState([])
+    const [value, setValues] = useState("");
 
+    
 
     useEffect(() => {
         fetchSneakerData()
         .then(r => r.json())
         .then(sneakers => setSneakers(sneakers.data))
     },[])
+
+    const handleInputChange = e => {
+      const { value } = e.target;
+      setValues(value);
+      console.log(value)
+    };
+
+    const handleSearchForShoesSubmit = e => {
+        e.preventDefault()
+        if (!value) {
+            return fetchSneakerData()
+            .then(r => r.json())
+            .then(sneakers => setSneakers(sneakers.data))
+        } else {
+            return sneakerSearch(value)
+            .then(r => r.json())
+            .then(sneakers => setSneakers(sneakers.data))
+        }
+    }
 
     const displaySneakers = () => {
         return sneakers.map(sneaker => {
@@ -28,13 +49,15 @@ const Sneakers = () => {
     }
     return (
         <div className="sneakerpage">
-            <form className="container">
+            <form onSubmit={handleSearchForShoesSubmit} className="container">
                 <div className="field has-addons">
                     <div className="control has-icons-left">
                         <input
+                        onChange={handleInputChange}
                         className="input is-medium is-info"
+                        value={value}
                         type="text"
-                        name="sneaker"
+                        name="input"
                         />
                         <span className="icon is-small is-left">
                             <i className="fab fa-searchengin"></i>

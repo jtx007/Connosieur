@@ -2,7 +2,6 @@ import React from 'react'
 
 const SneakerTile = (props) => {
     const { sneaker } = props
-    console.log(sneaker)
 
     const renderButtonsForTile = () => {
         if (props.user_id && props.token) {
