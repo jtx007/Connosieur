@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { userLogin, getCurrentUser } from "../api/adapters";
 import "../styles/form.css";
+import { navigate, Redirect } from '@reach/router'
 import { LoginContext } from '../context/loginContext'
-import { Redirect } from 'react-router-dom'
-import history from '../history'
 const Login = (props) => {
   const [values, setValues] = useState({ username: "", password: "" });
 
@@ -15,25 +14,25 @@ const Login = (props) => {
   const handleFormSubmit = e => {
     e.preventDefault();
     userLogin(values)
-    .then(r => r.json())
-    .then(data => {
-      localStorage.setItem('token', data.jwt)
-      props.setToken(data.jwt);
-    })
-    .then(() => getCurrentUser())
-    .then(r => r.json())
-    .then(data => {
-      localStorage.setItem('user_id', data.id)
-      props.setUser(data.id);
-    }
-      )
-    history.push("/profile")
+      .then(r => r.json())
+      .then(data => {
+        localStorage.setItem("token", data.jwt);
+        props.setToken(data.jwt);
+      })
+      .then(() => getCurrentUser())
+      .then(r => r.json())
+      .then(data => {
+        localStorage.setItem("user_id", data.id);
+        props.setUser(data.id);
+      })
+      .then(() => navigate("profile"));
+    
     
   }
 
   const renderFormOrRedirect = () => {
     if (props.token && props.user_id) {
-      return <Redirect to="/" />
+      return <Redirect  to="profile" noThrow/>
     } else {
       return (
         <>

@@ -22,7 +22,7 @@ const Navbar = ({token, user_id, setUser, setToken}) => {
         if (token && user_id) {
             return (
                 <>
-                <Navlink  to="/profile" >
+                <Navlink  to="profile" >
                     Profile
                 </Navlink>
                 <button onClick={logout} className="button is-dark">Logout</button>
@@ -31,10 +31,10 @@ const Navbar = ({token, user_id, setUser, setToken}) => {
         } else {
             return (
                 <>
-                    <Navlink  to="/login" >
+                    <Navlink  to="login" >
                             Login
                     </Navlink>
-                    <Navlink  to="/register" >
+                    <Navlink  to="register" >
                         Register
                     </Navlink>
                 </>
@@ -56,7 +56,7 @@ const Navbar = ({token, user_id, setUser, setToken}) => {
                     <Navlink  to="/" >
                         Home
                     </Navlink>
-                    <Navlink  to="/sneakers" >
+                    <Navlink  to="sneakers" >
                         Sneakers
                     </Navlink>
                     {renderNavLinks()}

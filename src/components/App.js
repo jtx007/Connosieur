@@ -27,10 +27,10 @@ const App = () => {
             <Router>
 
                 <Home path="/"  />
-                <Profile path="/profile"   />
-                <Register path="/register"   />
-                <Login path="/login"  />
-                <Sneakers path="/sneakers"   /> 
+                <Profile path="profile"   />
+                <Register path="register"   />
+                <Login path="login"  />
+                <Sneakers path="sneakers"   /> 
             </Router>
                 <Footer />
                 </LoginContext.Provider>

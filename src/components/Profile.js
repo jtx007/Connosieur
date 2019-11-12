@@ -7,7 +7,7 @@ const Profile = ({token, user_id}) => {
 
     const renderProfileOrRedirect = () => {
         if (!token || !user_id) {
-            return <Redirect to="/" />
+            return <Redirect to="/" noThrow/>
         } else {
             return (
                 <div>

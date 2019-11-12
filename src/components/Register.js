@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { userCreate } from "../api/adapters";
 import "../styles/form.css";
 import { LoginContext } from "../context/loginContext";
-import { Redirect } from "react-router-dom";
-import history from "../history";
-
+import { Redirect, navigate } from '@reach/router'
 const Register = ({ user_id, token }) => {
   const [values, setValues] = useState({
     username: "",
@@ -22,12 +20,12 @@ const Register = ({ user_id, token }) => {
   const handleFormSubmit = e => {
     e.preventDefault();
     userCreate(values);
-    history.push("/login");
+    navigate("login");
   };
 
   const renderFormOrRedirect = () => {
     if (user_id && token) {
-      return <Redirect to="/" />;
+      return <Redirect  to="/" noThrow/>;
     } else {
       return (
         <>
