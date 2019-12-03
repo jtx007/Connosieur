@@ -7,13 +7,14 @@ import "../styles/Profile.css"
 const Profile = ({token, user_id}) => {
 
 
-    const [userProfile, setUserProfile] = useState({username: '', city: '', age: ''})
+    const [userProfile, setUserProfile] = useState({username: '', city: '', age: '', avatarUrl: '', ownedSneakers: [], wantedSneakers: []})
 
     useEffect(() => {
         getCurrentUser()
         .then(r => r.json())
-        .then(data => setUserProfile({ username: data.username, city: data.city, age: data.age}))
+        .then(data => setUserProfile({ username: data.username, city: data.city, age: data.age, avatarUrl: data.avatarUrl, ownedSneakers: data.owned_sneakers, wantedSneakers: data.wanted_sneakers}))
     }, [])
+
 
     const renderProfileOrRedirect = () => {
         if (!token || !user_id) {
@@ -22,6 +23,7 @@ const Profile = ({token, user_id}) => {
             return (
                 <div>
                     <h1>Welcome {userProfile.username}</h1>
+                    <img src={userProfile.avatarUrl} alt="icon" />
                     <p>{userProfile.city}</p>
                     <p>{userProfile.age}</p>
                 </div>
@@ -29,6 +31,7 @@ const Profile = ({token, user_id}) => {
         }
     }
 
+    console.log(userProfile)
 
 
     return (

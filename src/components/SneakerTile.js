@@ -1,15 +1,24 @@
 import React from 'react'
-
+import { addToWant, addToOwn} from '../api/adapters'
 const SneakerTile = (props) => {
     const { sneaker } = props
+
+
+    const addToOwnButton = (shoeId, userId) => {
+        addToOwn(shoeId, userId)
+    }
+
+    const addToWantButton = (shoeId, userId) => {
+        addToWant(shoeId, userId)
+    }
 
     const renderButtonsForTile = () => {
         if (props.user_id && props.token) {
             return (
                 <>
                 <footer className="card-footer">
-                    <button  className="button card-button is-medium is-danger">OWN</button>
-                    <button  className="button card-button is-medium is-warning">WANT</button>
+                    <button onClick={() => addToOwnButton(sneaker.id, props.user_id)}  className="button card-button is-medium is-danger">OWN</button>
+                    <button  onClick={() => addToWantButton(sneaker.id, props.user_id)}className="button card-button is-medium is-warning">WANT</button>
                 </footer>
                 </>
             )

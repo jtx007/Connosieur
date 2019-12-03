@@ -30,7 +30,7 @@ const App = () => {
                 <Profile path="profile"   />
                 <Register path="register"   />
                 <Login path="login"  />
-                <Sneakers path="sneakers"   /> 
+                <Sneakers path="sneakers/page/:number"/> 
             </Router>
                 <Footer />
                 </LoginContext.Provider>
