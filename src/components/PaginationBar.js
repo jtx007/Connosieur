@@ -2,7 +2,18 @@ import React from 'react';
 import PaginationLink from './PaginationLink'
 import { navigate } from '@reach/router'
 
-const PaginationBar = ({currentPageNumber}) => {
+const PaginationBar = ({currentPageNumber, sneakerGridRef}) => {
+
+
+    const scrollToTopOfPage = () => {
+        window.scrollTo({
+            top: (0, 0)
+        });
+        window.scrollTo({
+          top: sneakerGridRef.current.scrollTo(0, 0),
+          behavior: "smooth"
+        });
+    }
 
     
    const handleNextPageButton = () => {
@@ -28,6 +39,9 @@ const PaginationBar = ({currentPageNumber}) => {
             Previous
         </button>
         <button onClick={handleNextPageButton} className="pagination-next">Next page</button>
+        <button onClick={scrollToTopOfPage} className="button is-danger pagination-next">Back To Top <br /><i className="fas fa-arrow-up"></i>
+
+</button>
         <ul className="pagination-list">
             <li>
             <PaginationLink to="/sneakers/page/1" className="pagination-link">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { fetchSneakerData, sneakerSearch } from "../api/adapters";
-import  PaginationBar  from './PaginationBar'
-import SneakerTile from "./SneakerTile";
+import  PaginationBar  from '../components/PaginationBar'
+import SneakerTile from "../components/SneakerTile";
 import { LoginContext } from "../context/loginContext";
 
 import "../styles/Sneaker.css";
@@ -82,7 +82,7 @@ const Sneakers = (props) => {
 
       <div className="columns is-7 is-multiline container sneakergrid">
         {displaySneakers()}
-        {sneakers.length > 0 ? <PaginationBar currentPageNumber={props.number} /> : null }
+        {sneakers.length > 0 ? <PaginationBar sneakerGridRef={sneakerGridRef} currentPageNumber={props.number} /> : null }
       </div>
     </div>
   );

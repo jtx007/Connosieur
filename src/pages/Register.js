@@ -25,7 +25,7 @@ const Register = ({ user_id, token }) => {
 
   const renderFormOrRedirect = () => {
     if (user_id && token) {
-      return <Redirect  to="/" noThrow/>;
+      return <Redirect  to="/profile" noThrow/>;
     } else {
       return (
         <>
