@@ -1,5 +1,5 @@
 
-const baseURL = "http://localhost:3000";
+const baseURL = "https://connosieurbackend.herokuapp.com";
 
 
 export function pingHeroku() {
