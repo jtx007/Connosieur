@@ -57,13 +57,14 @@ const Post = (props) => {
             newComments.push({avatar: props.avatar, text: commentValue,  user: props.user})
             setPost({...singlePost, comments: newComments})
         })
+        setCommentValue("")
         
     }
 
     const displayComments = () => {
         if (singlePost.comments) {
             return singlePost.comments.map(comment => {
-                return <Comment key={comment.id} comment={comment} />
+                return <Comment key={comment.id ? comment.id || commentValue} comment={comment} />
             })
         } else {
             return <h1>No comments for this post</h1>
