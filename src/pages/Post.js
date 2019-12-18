@@ -64,7 +64,7 @@ const Post = (props) => {
     const displayComments = () => {
         if (singlePost.comments) {
             return singlePost.comments.map(comment => {
-                return <Comment key={comment.id ? comment.id || commentValue} comment={comment} />
+                return <Comment key={comment.id ? comment.id : "temp"} comment={comment} />
             })
         } else {
             return <h1>No comments for this post</h1>

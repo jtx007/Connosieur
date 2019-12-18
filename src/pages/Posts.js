@@ -16,9 +16,14 @@ const Posts = () => {
     }, [])
 
     const renderPosts = () => {
-        return posts.map(post => {
-            return <PostPanel key={post.id} post={post} />
-        })
+        if (posts.length > 0) {
+            return posts.map(post => {
+                return <PostPanel key={post.id} post={post} />
+            })
+
+        } else {
+            return <div className="loader" />
+        }
     }
 
     return (
