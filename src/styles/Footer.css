@@ -1,0 +1,18 @@
+.footer {
+    height: 13vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerLinks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+a {
+    margin-right: 15px;
+}
