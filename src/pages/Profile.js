@@ -42,13 +42,13 @@ const Profile = ({ token, user_id }) => {
 
   const displayPostsActivity = () => {
     return userProfile.posts.map(post => {
-      return <li className="recent-activity-list"><strong>Post:</strong> {post.title}</li>;
+      return <li key={post.id} className="recent-activity-list"><strong>Post:</strong> {post.title}</li>;
     })
   }
 
   const displayCommentsActivity = () => {
     return userProfile.comments.map(comment => {
-      return <li><strong>Comment:</strong> "{comment.text}"</li>
+      return <li key={comment.id}><strong>Comment:</strong> "{comment.text}"</li>
     })
   }
 
