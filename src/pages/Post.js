@@ -4,7 +4,6 @@ import { fetchSinglePost, addComment, updatePost } from '../api/adapters'
 import { LoginContext } from '../context/loginContext' 
 import Comment from '../components/Comment'
 import '../styles/Post.css'
-import { Signer } from 'crypto';
 
 const Post = (props) => {
 
