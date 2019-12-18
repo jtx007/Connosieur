@@ -13,7 +13,7 @@ export function userCreate(user){
 
     return fetch(`${baseURL}/api/v1/users`, {
         method: "POST",
-        body: JSON.stringify({user: {username: user.username, password: user.password, city: user.city, age: user.age, avatarUrl: user.avatar}}),
+        body: JSON.stringify({user: {username: user.username, password: user.password, city: user.city, age: user.age, avatarUrl: user.avatar, bio: user.bio}}),
         headers: {
             "Content-Type": 'application/json',
             "Accept": 'application/json'
@@ -34,10 +34,13 @@ export function userLogin(user) {
 }
 
 
-export function allThreads() {
+export function allPosts() {
     return fetch(`${baseURL}/api/v1/posts`)
 }
 
+export function fetchSinglePost(postID) {
+    return fetch(`${baseURL}/api/v1/posts/${postID}`)
+}
 
 export function getCurrentUser() {
     return fetch(`${baseURL}/api/v1/users/me`, {
@@ -49,17 +52,29 @@ export function getCurrentUser() {
     
 }
 
-export function createThread(thread, userId) {
+export function createPost(post, userId) {
     return fetch(`${baseURL}/api/v1/posts`, {
         "method": "POST",
-        "body": JSON.stringify({post: {title: thread.title, body: thread.body, user_id: userId }}),
+        "body": JSON.stringify({post: {title: post.title, body: post.body, user_id: userId }}),
         "headers": {
             "Content-Type": 'application/json',
             "Accept": 'application/json',
             "Authorization": localStorage.token
         }
     })
+}
 
+export function updatePost(post, likes, dislikes, userId) {
+    
+    return fetch(`${baseURL}/api/v1/posts/${post.id}`, {
+        "method": "PATCH",
+        "body": JSON.stringify({post: {title: post.title, body: post.body, user_id: userId, likes: likes, dislikes: dislikes}}),
+        "headers": {
+            "Content-Type": 'application/json',
+            "Accept": 'application/json',
+            "Authorization": localStorage.token
+        }
+    });
 }
 
 
@@ -122,7 +137,7 @@ export function addComment(user_id, post_id, comment) {
 }
 
 export function getAnotherUserProfile(user) {
-    return fetch(`${baseURL}/api/v1/users/${user}`)
+    return fetch(`${baseURL}/api/v1/users/?username=${user}`)
 
 }
 

@@ -1,0 +1,13 @@
+
+.post {
+    height: 90vh;
+    overflow: scroll;
+}
+
+.card {
+    padding: 20px;
+}
+
+.image {
+    margin-right: 20px;
+}

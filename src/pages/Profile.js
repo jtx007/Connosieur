@@ -10,15 +10,17 @@ const Profile = ({ token, user_id }) => {
     username: "",
     city: "",
     age: "",
+    bio: "",
     avatarUrl: "",
     ownedSneakers: [],
-    wantedSneakers: []
+    wantedSneakers: [],
+    posts: [],
+    comments: []
   });
 
   const [tabOwnActiveState, setOwnTabActiveState] = useState(true)
   const [tabWantActiveState, setWantTabActiveState] = useState(false)
 
-  console.log(userProfile)
   useEffect(() => {
     getCurrentUser()
       .then(r => r.json())
@@ -27,9 +29,12 @@ const Profile = ({ token, user_id }) => {
           username: data.username,
           city: data.city,
           age: data.age,
+          bio: data.bio,
           avatarUrl: data.avatarUrl,
           ownedSneakers: data.owned_sneakers,
-          wantedSneakers: data.wanted_sneakers
+          wantedSneakers: data.wanted_sneakers,
+          posts: data.posts,
+          comments: data.comments
         })
       );
   }, []);
@@ -44,18 +49,25 @@ const Profile = ({ token, user_id }) => {
   }
 
   const displayOwnedSneakers = () => {
-    if (userProfile.ownedSneakers) {
+    if (userProfile.ownedSneakers.length > 0) {
       return userProfile.ownedSneakers.map(sneaker => {
         return <ProfileSneakerTile ownContainer={true} removeSneaker={removeFromOwn} sneaker={sneaker} key={sneaker.owned_sneaker_id}/>;
       });
+    } else {
+      return <div className="title is-warning">No current owned</div>
     }
+    
+
+    
   };
 
   const displayWantedSneakers = () => {
-    if (userProfile.wantedSneakers) {
+    if (userProfile.wantedSneakers.length > 0) {
       return userProfile.wantedSneakers.map(sneaker => {
         return <ProfileSneakerTile wantContainer={true} removeSneaker={removeFromWant}  sneaker={sneaker} key={sneaker.wanted_sneaker_id}/>;
       });
+    } else {
+      return <div className="title is-warning">No current wants</div>
     }
   };
 
@@ -101,44 +113,54 @@ const Profile = ({ token, user_id }) => {
       return (
         <>
           <br />
-          <section className="hero section  is-bold main-header">
+          <section className="main-header">
             <div className="hero body">
-              <h1 className="title">Welcome {userProfile.username}</h1>
-              <figure className="image is-128x128">
-                <img
-                  className="is-rounded"
-                  src={userProfile.avatarUrl}
-                  alt="icon"
-                />
-              </figure>
-              <br />
-              <h1 className="subtitle">{userProfile.city}</h1>
-              <h1 className="subtitle">{userProfile.age}</h1>
+                <div className="section1">
+                  <h1 className="title is-size-1">{userProfile.username}</h1>
+                  <figure className="image is-128x128">
+                    <img className="is-rounded" src={userProfile.avatarUrl} alt="icon" />
+                  </figure>
+                  <br />
+                  <h1 className="subtitle location-subtitle">
+                    <i className="fas fa-map-marker-alt location-icon">
+                      <br />
+                    </i>
+                    {userProfile.city}
+                  </h1>
+                  <h1 className="subtitle">{userProfile.age}</h1>
+                </div>
             </div>
+            <p className="title is-size-5 personalBio">"{userProfile.bio}..."</p>
           </section>
           <br />
           <div className="sneakerCollectionContainer">
             <div className="collectionTabs">
-              <button
+              <div
                 onClick={prevState => {
-                  setOwnTabActiveState(!prevState.tabOwnActiveState)
-                  setWantTabActiveState(false)
-                }
-                }
-                className={`button is-large is-light tab ${tabOwnActiveState ? "is-dark" : null}`}
+                  setOwnTabActiveState(!prevState.tabOwnActiveState);
+                  setWantTabActiveState(false);
+                }}
+                className={`is-large is-light tab ${
+                  tabOwnActiveState ? "selectedTab" : null
+                }`}
               >
+                <i className="fas fa-key tabIcon"></i>
                 Own
-              </button>
-              <button onClick={prevState => {
-                setWantTabActiveState(!prevState.tabWantActiveState)
-                setOwnTabActiveState(false)
-                }
-                } className={`button is-large is-light tab ${tabWantActiveState ? "is-dark" : null}`}>Want</button>
+              </div>
+              <div
+                onClick={prevState => {
+                  setWantTabActiveState(!prevState.tabWantActiveState);
+                  setOwnTabActiveState(false);
+                }}
+                className={`is-large is-light tab ${
+                  tabWantActiveState ? "selectedTab" : null
+                }`}
+              >
+                <i className="fas fa-shopping-cart tabIcon"></i>
+                Want
+              </div>
             </div>
-            <div className="sneakerContainer multiline">
-              {showOwnOrWant()}
-
-            </div>
+            <div className="sneakerContainer multiline">{showOwnOrWant()}</div>
           </div>
         </>
       );

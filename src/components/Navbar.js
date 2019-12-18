@@ -25,6 +25,7 @@ const Navbar = ({token, user_id, setUser, setToken}) => {
                     Profile
                 </Navlink>
                 <button onClick={logout} className="button is-dark">Logout</button>
+                
                 </>
             )
         } else {
@@ -57,6 +58,9 @@ const Navbar = ({token, user_id, setUser, setToken}) => {
                     </Navlink>
                     <Navlink  to={`sneakers/page/1`} >
                         Sneakers
+                    </Navlink>
+                    <Navlink to="posts">
+                        Posts
                     </Navlink>
                     {renderNavLinks()}
                 </div>

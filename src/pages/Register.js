@@ -9,7 +9,8 @@ const Register = ({ user_id, token }) => {
     password: "",
     age: "",
     city: "",
-    avatar: ""
+    avatar: "",
+    bio: ""
   });
 
   const handleInputChange = e => {
@@ -41,6 +42,7 @@ const Register = ({ user_id, token }) => {
               <label className="label is-medium">Create Username</label>
               <div className="control has-icons-left">
                 <input
+                  required
                   onChange={handleInputChange}
                   className="input is-medium"
                   type="text"
@@ -56,6 +58,7 @@ const Register = ({ user_id, token }) => {
               <label className="label is-medium">Create Password</label>
               <div className="control has-icons-left">
                 <input
+                  required
                   onChange={handleInputChange}
                   className="input is-medium"
                   type="password"
@@ -71,6 +74,7 @@ const Register = ({ user_id, token }) => {
               <label className="label is-medium">Enter Age</label>
               <div className="control">
                 <input
+                  required
                   onChange={handleInputChange}
                   className="input is-medium"
                   type="text"
@@ -83,6 +87,7 @@ const Register = ({ user_id, token }) => {
               <label className="label is-medium">Enter City</label>
               <div className="control has-icons-left">
                 <input
+                  required
                   onChange={handleInputChange}
                   className="input is-medium"
                   type="text"
@@ -98,6 +103,7 @@ const Register = ({ user_id, token }) => {
               <label className="label is-medium">Enter Avatar URL</label>
               <div className="control has-icons-left">
                 <input
+                  required
                   onChange={handleInputChange}
                   className="input is-medium"
                   type="text"
@@ -109,6 +115,16 @@ const Register = ({ user_id, token }) => {
                 </span>
               </div>
             </div>
+            <label className="label is-medium">Enter Bio</label>
+            <textarea
+              required
+              onChange={handleInputChange}
+              className="textarea"
+              type="text"
+              name="bio"
+              value={values.bio}
+            ></textarea>
+            <br />
             <div className="field">
               <div className="control">
                 <button

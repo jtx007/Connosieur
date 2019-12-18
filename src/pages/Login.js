@@ -23,7 +23,11 @@ const Login = (props) => {
       .then(r => r.json())
       .then(data => {
         localStorage.setItem("user_id", data.id);
-        props.setUser(data.id);
+        localStorage.setItem("avatar", data.avatarUrl);
+        localStorage.setItem("user", data.username)
+        props.setUserId(data.id);
+        props.setAvatar(data.avatarUrl);
+        props.setUser(data.username);
       })
       .then(() => navigate("profile"));
     
@@ -48,6 +52,7 @@ const Login = (props) => {
             <label className="label is-medium">Enter Username</label>
             <div className="control has-icons-left">
               <input
+              required
                 onChange={handleInputChange}
                 className="input is-medium"
                 type="text"
@@ -63,6 +68,7 @@ const Login = (props) => {
             <label className="label is-medium">Enter Password</label>
             <div className="control has-icons-left">
               <input
+                required
                 onChange={handleInputChange}
                 className="input is-medium"
                 type="password"
