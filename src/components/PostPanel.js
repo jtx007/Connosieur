@@ -4,7 +4,6 @@ import { Link } from '@reach/router'
 
 const PostPanel = (props) => {
     const { post, user_id } = props
-    console.log(props)
 
     const [postLikes, setLikes] = useState(post.likes)
     const [postDislikes, setDislikes] = useState(post.dislikes)

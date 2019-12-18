@@ -2,11 +2,6 @@
 const baseURL = "https://connosieurbackend.herokuapp.com";
 
 
-export function pingHeroku() {
-    return fetch(`${baseURL}/api/v1/users/ping`)
-    .then(r => r.json())
-    .then(data => console.log(data))
-}
 
 
 export function userCreate(user){

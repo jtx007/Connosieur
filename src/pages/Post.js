@@ -51,7 +51,6 @@ const Post = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log("form submit")
         addComment(props.user_id, props.number, commentValue)
         .then(() => {
             let newComments = singlePost.comments

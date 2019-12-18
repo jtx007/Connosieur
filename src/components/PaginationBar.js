@@ -18,7 +18,7 @@ const PaginationBar = ({currentPageNumber, sneakerGridRef}) => {
     
    const handleNextPageButton = () => {
         if (currentPageNumber >= 16) {
-            console.log("VOID")
+            console.log("")
         } else if (currentPageNumber >= 1) {
             navigate(`/sneakers/page/${(parseInt(currentPageNumber)) + 1}`)
         }
@@ -27,7 +27,7 @@ const PaginationBar = ({currentPageNumber, sneakerGridRef}) => {
 
     const handlePreviousPageButton = () => {
         if (currentPageNumber <= 1) {
-            console.log("VOID")
+            console.log("")
         } else {
             navigate(`/sneakers/page/${currentPageNumber - 1}`)
         }
