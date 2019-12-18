@@ -81,7 +81,7 @@ const Post = (props) => {
                     <Link to={`/profile/${singlePost.user}`}><img alt="post-author-icon" src={singlePost.avatar} /></Link>
                 </figure>
                 <p className="subtitle">By {singlePost.user}</p>
-                 <button onClick={likeButton} className="button is-light is-medium"><i className="far fa-thumbs-up" />: {singlePost.likes}</button>
+                 <button onClick={likeButton}  className="button is-light is-medium"><i className="far fa-thumbs-up" />: {singlePost.likes}</button>
                  <button onClick={dislikeButton} className="button is-light is-medium"><i className="far fa-thumbs-down" />: {singlePost.dislikes}</button>
                 <p>{singlePost.body}</p>
            </div>

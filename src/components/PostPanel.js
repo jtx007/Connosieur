@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import { updatePost } from '../api/adapters'
 import { Link } from '@reach/router'
 
 const PostPanel = (props) => {
     const { post, user_id } = props
 
+
     const [postLikes, setLikes] = useState(post.likes)
     const [postDislikes, setDislikes] = useState(post.dislikes)
+
+   
+
+    
 
 
     const likeButton = () => {
@@ -36,8 +41,8 @@ const PostPanel = (props) => {
                 <p className="subtitle">{post.body}</p>
             </div>
         <footer>
-            <button onClick={likeButton} className="button is-light is-large"><i className="far fa-thumbs-up" />: {postLikes}</button>
-            <button onClick={dislikeButton} className="button is-light is-large"><i className="far fa-thumbs-down" />: {postDislikes}</button>
+            <button   onClick={likeButton}  className="button is-light is-large"><i className="far fa-thumbs-up" />: {postLikes}</button>
+            <button  onClick={dislikeButton} className="button is-light is-large"><i className="far fa-thumbs-down" />: {postDislikes}</button>
         </footer>
         </div>
     )
