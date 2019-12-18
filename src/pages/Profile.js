@@ -40,6 +40,19 @@ const Profile = ({ token, user_id }) => {
   }, []);
   
 
+  const displayPostsActivity = () => {
+    return userProfile.posts.map(post => {
+      return <li className="recent-activity-list"><strong>Post:</strong> {post.title}</li>;
+    })
+  }
+
+  const displayCommentsActivity = () => {
+    return userProfile.comments.map(comment => {
+      return <li><strong>Comment:</strong> "{comment.text}"</li>
+    })
+  }
+
+
   const showOwnOrWant = () => {
     if (tabOwnActiveState) {
       return displayOwnedSneakers()
@@ -113,12 +126,17 @@ const Profile = ({ token, user_id }) => {
       return (
         <>
           <br />
-          <section className="main-header">
-            <div className="hero body">
+          <div className="top-two">
+            <section className="main-header">
+              <div className="hero body">
                 <div className="section1">
                   <h1 className="title is-size-1">{userProfile.username}</h1>
                   <figure className="image is-128x128">
-                    <img className="is-rounded" src={userProfile.avatarUrl} alt="icon" />
+                    <img
+                      className="is-rounded"
+                      src={userProfile.avatarUrl}
+                      alt="icon"
+                    />
                   </figure>
                   <br />
                   <h1 className="subtitle location-subtitle">
@@ -129,9 +147,21 @@ const Profile = ({ token, user_id }) => {
                   </h1>
                   <h1 className="subtitle">{userProfile.age}</h1>
                 </div>
-            </div>
-            <p className="title is-size-5 personalBio">"{userProfile.bio}..."</p>
-          </section>
+              </div>
+              <p className="title is-size-5 personalBio">
+                "{userProfile.bio}..."
+              </p>
+            </section>
+            <section className="second-header">
+              <div className="hero body">
+                <h1 className="title">Recent Activity</h1>
+                <ul className="recent-activity-list">
+                  {displayPostsActivity()}
+                  {displayCommentsActivity()}
+                </ul>
+              </div>
+            </section>
+          </div>
           <br />
           <div className="sneakerCollectionContainer">
             <div className="collectionTabs">

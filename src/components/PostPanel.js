@@ -6,18 +6,21 @@ const PostPanel = (props) => {
     const { post, user_id } = props
     console.log(props)
 
-    const [likes, setLikes] = useState(post.likes)
-    const [dislikes, setDislikes] = useState(post.dislikes)
+    const [postLikes, setLikes] = useState(post.likes)
+    const [postDislikes, setDislikes] = useState(post.dislikes)
 
 
     const likeButton = () => {
-        setLikes(1 + likes)
-        updatePost(post, likes, dislikes, user_id)
+        const newLikes = postLikes
+        setLikes(newLikes + 1)
+        updatePost(post, newLikes + 1, postDislikes, user_id)
         
     }
 
     const dislikeButton = () => {
-        setDislikes(dislikes + 1)
+       const newDisLikes = postDislikes
+       setDislikes(newDisLikes + 1)
+       updatePost(post, postLikes, newDisLikes + 1, user_id)
     }
 
     return (
@@ -34,8 +37,8 @@ const PostPanel = (props) => {
                 <p className="subtitle">{post.body}</p>
             </div>
         <footer>
-            <button onClick={likeButton} className="button is-light is-large"><i className="far fa-thumbs-up" />: {likes}</button>
-            <button onClick={dislikeButton} className="button is-light is-large"><i className="far fa-thumbs-down" />: {dislikes}</button>
+            <button onClick={likeButton} className="button is-light is-large"><i className="far fa-thumbs-up" />: {postLikes}</button>
+            <button onClick={dislikeButton} className="button is-light is-large"><i className="far fa-thumbs-down" />: {postDislikes}</button>
         </footer>
         </div>
     )

@@ -9,5 +9,25 @@
     height: 90vh;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
 
+}
+
+.homepage-header {
+    height: 40rem;
+    padding: 50px;
+    
+}
+
+.home-hero-link {
+    color: rgb(115, 115, 236) !important;
+    padding: 0;
+    margin: 0;
+}
+
+.home-hero-link:hover {
+    color: rgb(230, 84, 84) !important;
 }

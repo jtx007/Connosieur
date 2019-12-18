@@ -14,6 +14,28 @@ const ProfileSneakerTile = (props) => {
         id = sneaker.wanted_sneaker_id
     }
 
+    const showRemoveButton = () => {
+        if (props.removeSneaker) {
+            return (
+              <p className="title is-size-6">
+                {sneaker.title}
+                <button
+                  onClick={() => {
+                    props.removeSneaker(id);
+                  }}
+                  className="button is-small is-danger removeSneakerButton"
+                >
+                  x
+                </button>
+              </p>
+            );
+        } else {
+            return null
+        }
+    }
+
+
+
 
 
 
@@ -33,7 +55,7 @@ const ProfileSneakerTile = (props) => {
         } else {
             return (
                 <div className="sneaker-front">
-                <p className="title is-size-6">{sneaker.title}<button onClick={() => {props.removeSneaker(id)}} className="button is-small is-danger removeSneakerButton">x</button></p>
+                    {showRemoveButton()}
                 <figure className="image is128x128">
                     <img src={sneaker.img_url} alt={sneaker.title} />
                 </figure>

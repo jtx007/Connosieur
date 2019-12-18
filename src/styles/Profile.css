@@ -4,6 +4,11 @@
   margin-bottom: 10rem;
 }
 
+.top-two {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .location-subtitle {
   display: flex;
 }
@@ -32,6 +37,15 @@
   border: 1px solid rgba(255, 0, 0, 0.171);
 }
 
+.second-header {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 30vw;
+  padding: 10px;
+  overflow: scroll;
+  margin-left: 100px;
+  border: 1px solid rgba(255, 0, 0, 0.171);
+}
+
 .tabIcon {
   margin-right: 15px;
 }
@@ -42,6 +56,10 @@
   width: 46vw;
   justify-content: space-around;
 }
+
+.recent-activity-list {
+  list-style-type: square disc;
+} 
 
 .tab {
   padding-left: 50px;
@@ -120,7 +138,7 @@
   display: flex;
   flex-flow: column wrap;
   justify-items: space-around;
-  height: 16.5rem;
+  height: 15rem;
   margin: 0 auto;
 }
 
