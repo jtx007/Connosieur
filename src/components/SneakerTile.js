@@ -1,6 +1,8 @@
-import React from 'react'
-import { addToWant, addToOwn} from '../api/adapters'
+import React, {useState} from 'react'
+import { LoginContext } from '../context/loginContext'
+import { addToWant, addToOwn } from '../api/adapters'
 const SneakerTile = (props) => {
+    console.log(props)
     const { sneaker } = props
 
 
@@ -17,7 +19,7 @@ const SneakerTile = (props) => {
             return (
                 <>
                 <footer className="card-footer">
-                    <button onClick={() => addToOwnButton(sneaker.id, props.user_id)}  className="button card-button is-medium is-danger">OWN</button>
+                    <button  onClick={() => addToOwnButton(sneaker.id, props.user_id)}  className="button card-button is-medium is-danger">OWN</button>
                     <button  onClick={() => addToWantButton(sneaker.id, props.user_id)}className="button card-button is-medium is-warning">WANT</button>
                 </footer>
                 </>
@@ -52,4 +54,14 @@ const SneakerTile = (props) => {
 
 
 
-export default SneakerTile;
+const SneakerTileWithContext = (props) => {
+    return (
+        <LoginContext.Consumer>
+            {value => {
+                return <SneakerTile {...value} {...props} />
+            }}
+        </LoginContext.Consumer>
+    )
+}
+
+export default SneakerTileWithContext;

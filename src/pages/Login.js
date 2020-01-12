@@ -28,6 +28,8 @@ const Login = (props) => {
         props.setUserId(data.id);
         props.setAvatar(data.avatarUrl);
         props.setUser(data.username);
+        props.setOwnedCollection(data.owned_sneakers)
+        props.setWantedCollection(data.wanted_sneakers)
       })
       .then(() => navigate("profile"));
     
