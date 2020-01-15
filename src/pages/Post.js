@@ -82,8 +82,8 @@ const Post = (props) => {
                     <Link to={`/profile/${singlePost.user}`}><img alt="post-author-icon" src={singlePost.avatar} /></Link>
                 </figure>
                 <p className="subtitle">By {singlePost.user}</p>
-                 <button onClick={likeButton}  className="button is-light is-medium"><i className="far fa-thumbs-up" />: {singlePost.likes}</button>
-                 <button onClick={dislikeButton} className="button is-light is-medium"><i className="far fa-thumbs-down" />: {singlePost.dislikes}</button>
+                 <button disabled={props.user_id && props.token ? false : true} onClick={likeButton}  className="button is-light is-medium"><i className="far fa-thumbs-up" />: {singlePost.likes}</button>
+                 <button disabled={props.user_id && props.token ? false : true} onClick={dislikeButton} className="button is-light is-medium"><i className="far fa-thumbs-down" />: {singlePost.dislikes}</button>
                 <p>{singlePost.body}</p>
            </div>
            <article className="media">
@@ -97,6 +97,7 @@ const Post = (props) => {
                     <div className="field">
                     <p className="control">
                         <textarea
+                        disabled={props.user_id && props.token ? false : true}
                         required
                         value={commentValue}
                         onChange={handleInputChange}
@@ -105,7 +106,7 @@ const Post = (props) => {
                     </div>
                     <div className="level-left">
                         <div className="level-item">
-                        <button type="submit" className="button is-info">Submit</button>
+                        <button disabled={props.user_id && props.token ? false : true} type="submit" className="button is-info">Submit</button>
                         </div>
                     </div>
                     </form>
