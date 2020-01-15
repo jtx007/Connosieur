@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import { updatePost } from '../api/adapters'
 import { Link } from '@reach/router'
+import { LoginContext } from '../context/loginContext'
 
 const PostPanel = (props) => {
     const { post, user_id } = props
 
+    console.log(props)
 
     const [postLikes, setLikes] = useState(post.likes)
     const [postDislikes, setDislikes] = useState(post.dislikes)
@@ -41,8 +43,8 @@ const PostPanel = (props) => {
                 <p className="subtitle">{post.body}</p>
             </div>
         <footer>
-            <button   onClick={likeButton}  className="button is-light is-large"><i className="far fa-thumbs-up" />: {postLikes}</button>
-            <button  onClick={dislikeButton} className="button is-light is-large"><i className="far fa-thumbs-down" />: {postDislikes}</button>
+            <button disabled={props.user_id && props.token ? false : true}   onClick={likeButton}  className="button is-light is-large"><i className="far fa-thumbs-up" />: {postLikes}</button>
+            <button disabled={props.user_id && props.token ? false : true} onClick={dislikeButton} className="button is-light is-large"><i className="far fa-thumbs-down" />: {postDislikes}</button>
         </footer>
         </div>
     )
@@ -50,4 +52,15 @@ const PostPanel = (props) => {
 
 
 
-export default PostPanel;
+const PostPanelWithLoginContext = (props) => {
+    return (
+        <LoginContext.Consumer>
+            {value => {
+                return <PostPanel {...value} {...props} />
+            }}
+        </LoginContext.Consumer>
+
+    )
+}
+
+export default PostPanelWithLoginContext;
