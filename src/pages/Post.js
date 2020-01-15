@@ -89,7 +89,7 @@ const Post = (props) => {
            <article className="media">
                 <figure className="media-left">
                     <p className="image is-64x64">
-                    <Link to="/profile"><img alt="current-user-icon" src={props.avatar} /></Link>
+    <Link to="/profile">{props.avatar ? <img alt="current-user-icon" src={props.avatar} /> : <i class="fas fa-user-circle"></i>}</Link>
                     </p>
                 </figure>
                 <div className="media-content">
