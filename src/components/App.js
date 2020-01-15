@@ -19,8 +19,7 @@ const App = () => {
     const [user_id, setUserId ] = useState(localStorage.getItem('user_id') || "")
     const [avatar, setAvatar] = useState(localStorage.getItem('avatar') || "")
     const [user, setUser] = useState(localStorage.getItem('user') || "")
-    const [ownedCollection, setOwnedCollection] = useState(localStorage.getItem('ownedCollection') || [])
-    const [wantedCollection, setWantedCollection] = useState(localStorage.getItem('wantedCollection') || [])
+    
     return (
                 <LoginContext.Provider
                 value={{
@@ -28,14 +27,10 @@ const App = () => {
                     user_id,
                     avatar,
                     user,
-                    ownedCollection,
-                    wantedCollection,
                     setToken,
                     setUserId,
                     setAvatar,
-                    setUser,
-                    setOwnedCollection,
-                    setWantedCollection
+                    setUser
                 }}
                 >
                 <Navbar />

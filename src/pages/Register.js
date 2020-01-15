@@ -20,7 +20,8 @@ const Register = ({ user_id, token }) => {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    userCreate(values);
+    userCreate(values)
+    .catch(error => console.log(error));
     navigate("login");
   };
 

@@ -25,13 +25,15 @@ const Login = (props) => {
         localStorage.setItem("user_id", data.id);
         localStorage.setItem("avatar", data.avatarUrl);
         localStorage.setItem("user", data.username)
+        
         props.setUserId(data.id);
         props.setAvatar(data.avatarUrl);
         props.setUser(data.username);
-        props.setOwnedCollection(data.owned_sneakers)
-        props.setWantedCollection(data.wanted_sneakers)
+        
       })
-      .then(() => navigate("profile"));
+      .then(() => navigate("profile"))
+      .catch(error => console.log(error))
+      ;
     
     
   }

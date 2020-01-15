@@ -57,6 +57,7 @@ const Post = (props) => {
             newComments.push({avatar: props.avatar, text: commentValue,  user: props.user})
             setPost({...singlePost, comments: newComments})
         })
+        .catch(error => console.log(error))
         setCommentValue("")
         
     }

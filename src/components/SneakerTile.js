@@ -1,26 +1,39 @@
-import React, {useState} from 'react'
+import React, {useState, useMemo, useCallback} from 'react'
 import { LoginContext } from '../context/loginContext'
-import { addToWant, addToOwn } from '../api/adapters'
+import { addToWant, addToOwn, getCurrentUser } from '../api/adapters'
 const SneakerTile = (props) => {
+
     console.log(props)
     const { sneaker } = props
+    const [owned, setOwnedState] = useState(false)
+    const [wanted, setWantedState] = useState(false)
+    
+    useMemo(() => {
+        getCurrentUser()
+    })
+
+
+
 
 
     const addToOwnButton = (shoeId, userId) => {
         addToOwn(shoeId, userId)
+        setOwnedState(true)
     }
 
     const addToWantButton = (shoeId, userId) => {
         addToWant(shoeId, userId)
+        setWantedState(true)
     }
+
 
     const renderButtonsForTile = () => {
         if (props.user_id && props.token) {
             return (
                 <>
                 <footer className="card-footer">
-                    <button  onClick={() => addToOwnButton(sneaker.id, props.user_id)}  className="button card-button is-medium is-danger">OWN</button>
-                    <button  onClick={() => addToWantButton(sneaker.id, props.user_id)}className="button card-button is-medium is-warning">WANT</button>
+                    <button disabled={owned ? true : false} onClick={() => addToOwnButton(sneaker.id, props.user_id)}  className="button card-button is-medium is-danger">{owned ? "OWNED" : "OWN"}</button>
+                    <button disabled={wanted ? true : false} onClick={() => addToWantButton(sneaker.id, props.user_id)}className="button card-button is-medium is-warning">{wanted ? "WANTED" : "WANT"}</button>
                 </footer>
                 </>
             )

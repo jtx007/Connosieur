@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import { updatePost } from '../api/adapters'
 import { Link } from '@reach/router'
 
