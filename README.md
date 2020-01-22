@@ -16,7 +16,7 @@ Try out the application with the following credentials:
 - Ruby on Rails ([backend repo](https://github.com/jtx007/ConnosieurBackend))
 - Materialize-CSS
 
-![Connosiuer](/connosieur.png)
+![Connosiuer](/src/assets/connosieur.png)
 
 
 ## Please check out this [video demo](https://youtu.be/PVA6Xyg6c74) to see it in action
@@ -29,7 +29,7 @@ The pivotal piece of this project is the database of sneakers.  This data was sc
 
 ## The sneaker database
 
-![Database](/db.png)
+![Database](/src/assets/database.png)
 
 Here users can add their favorite sneakers to their "OWN" or "WANTS" lists.  The user then can engage in discussions with other users about sneakers or any other related topics by clicking on the threads button in the navbar or after creating a new post via their profile page.  
 
