@@ -1,5 +1,5 @@
 
-# Connosieur
+# Connosieur V2
 
 This application was built with sneaker enthusiasts in mind.  It's platform for individuals to find their favorite sneakers and show them off on their individual profiles.  They can also go to the thread page and discuss all things sneaker and engage in conversations with other users and see their sneakers. 
 
@@ -9,12 +9,15 @@ Try out the application with the following credentials:
 
 #### Password: 123
 
+## Getting Started
+
+### Prerequisites
+This project needs Node v12.8.0 as well as npm v6.13.0 so make sure that those are present on your local machine
 
 ## Tech Stack: 
-- React
-- Redux
+- React 16.11.0
 - Ruby on Rails ([backend repo](https://github.com/jtx007/ConnosieurBackend))
-- Materialize-CSS
+- [Bulma-CSS](https://bulma.io/)
 
 ![Connosiuer](/connosieur.png)
 
