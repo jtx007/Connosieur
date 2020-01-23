@@ -14,6 +14,17 @@ Try out the application with the following credentials:
 ### Prerequisites
 This project needs Node v12.8.0 as well as npm v6.13.0 so make sure that those are present on your local machine
 
+
+### Development
+In order to develop the project locally, run the following commands in your terminal
+
+```
+git clone
+npm install
+npm start
+```
+Currently the project is hooked up to the heroku backend. If you wish to swap to the local backend repo, just change out the BaseURL and run this frontend instance at a different port other than 3000. Leave port 3000 for the Rails backend.
+
 ## Tech Stack: 
 - React 16.11.0
 - Ruby on Rails ([backend repo](https://github.com/jtx007/ConnosieurBackend))
