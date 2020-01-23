@@ -11,6 +11,8 @@ const Navbar = ({token, user_id, setUser, setToken}) => {
         localStorage.clear()
         setToken('')
         setUser('')
+        setAvatar('') 
+        setUser('')
     }
     
    
