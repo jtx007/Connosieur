@@ -3,7 +3,7 @@ import { Link } from '@reach/router'
 import Navlink from './Navlink'
 import dunk from '../assets/dunk.ico'
 import { LoginContext } from '../context/loginContext'
-const Navbar = ({token, user_id, setUser, setToken}) => {
+const Navbar = ({token, user_id, setUser, setToken, setAvatar}) => {
     
     
     
