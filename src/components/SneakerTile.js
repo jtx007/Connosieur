@@ -1,6 +1,6 @@
-import React, {useState, useMemo, useCallback} from 'react'
+import React, {useState} from 'react'
 import { LoginContext } from '../context/loginContext'
-import { addToWant, addToOwn, getCurrentUser } from '../api/adapters'
+import { addToWant, addToOwn } from '../api/adapters'
 const SneakerTile = (props) => {
 
     console.log(props)
