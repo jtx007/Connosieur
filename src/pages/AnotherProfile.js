@@ -4,7 +4,6 @@ import { LoginContext } from '../context/loginContext'
 import ProfileSneakerTile from '../components/ProfileSneakerTile'
 import { Redirect } from '@reach/router'
 const AnotherProfile = (props) => {
-    console.log(props)
     const [userProfile, setUserProfile] = useState({
       username: "",
       city: "",

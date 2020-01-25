@@ -3,7 +3,6 @@ import { LoginContext } from '../context/loginContext'
 import { addToWant, addToOwn } from '../api/adapters'
 const SneakerTile = (props) => {
 
-    console.log(props)
     const { sneaker } = props
     const [owned, setOwnedState] = useState(false)
     const [wanted, setWantedState] = useState(false)
