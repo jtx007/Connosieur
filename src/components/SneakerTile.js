@@ -8,10 +8,7 @@ const SneakerTile = (props) => {
     const [owned, setOwnedState] = useState(false)
     const [wanted, setWantedState] = useState(false)
     
-    useMemo(() => {
-        getCurrentUser()
-    })
-
+    
 
 
 
