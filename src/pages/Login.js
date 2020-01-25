@@ -8,7 +8,7 @@ const Login = (props) => {
 
   const handleInputChange = e => {
     const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
+    setValues({ ...values, [name]: value.trim() });
   };
 
   const handleFormSubmit = e => {
