@@ -1,11 +1,13 @@
 
 # Connosieur V2
 
+## *Project is deployed at the link [here](https://connosieurfrontend.herokuapp.com/)*
+
 This application was built with sneaker enthusiasts in mind.  It's platform for individuals to find their favorite sneakers and show them off on their individual profiles.  They can also go to the thread page and discuss all things sneaker and engage in conversations with other users and see their sneakers. 
 
 Try out the application with the following credentials:
 
-#### Username: James
+#### Username: Test
 
 #### Password: 123
 
