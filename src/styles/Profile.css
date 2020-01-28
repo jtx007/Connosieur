@@ -1,12 +1,13 @@
 .profile {
   height: 90vh;
-  padding: 20px;
+  padding: 30px;
   margin-bottom: 10rem;
 }
 
 .top-two {
   display: flex;
   flex-flow: row wrap;
+  padding: 20px;
 }
 
 .location-subtitle {
@@ -86,6 +87,8 @@
   width: min-content;
   scroll-behavior: smooth;
   padding: 20px;
+  margin-left: 20px;
+  margin-bottom: 25px;
 }
 
 .sneaker {
