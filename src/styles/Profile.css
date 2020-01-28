@@ -2,12 +2,17 @@
   height: 90vh;
   padding: 30px;
   margin-bottom: 10rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-two {
   display: flex;
   flex-flow: row wrap;
-  padding: 20px;
+  padding-left: 100px;
+  padding-top: 50px;
 }
 
 .location-subtitle {
@@ -56,6 +61,7 @@
   font-size: 25px;
   width: 46vw;
   justify-content: space-around;
+  margin-left: 100px;
 }
 
 .recent-activity-list {
@@ -87,8 +93,8 @@
   width: min-content;
   scroll-behavior: smooth;
   padding: 20px;
-  margin-left: 20px;
-  margin-bottom: 25px;
+  margin-left: 100px;
+  margin-bottom: 50px;
 }
 
 .sneaker {
