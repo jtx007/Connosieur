@@ -1,6 +1,6 @@
 .profile {
   height: 90vh;
-  padding: 30px;
+  padding: 50px;
   margin-bottom: 10rem;
   display: flex;
   flex-flow: row wrap;
@@ -11,8 +11,9 @@
 .top-two {
   display: flex;
   flex-flow: row wrap;
+  padding-bottom: 60px;
   padding-left: 100px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .location-subtitle {
@@ -92,9 +93,9 @@
   grid-template-rows: auto;
   width: min-content;
   scroll-behavior: smooth;
-  padding: 20px;
+  padding: 35px;
+  margin-bottom: 70px;
   margin-left: 100px;
-  margin-bottom: 50px;
 }
 
 .sneaker {

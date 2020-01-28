@@ -124,81 +124,85 @@ const Profile = ({ token, user_id }) => {
       return <Redirect to="/" noThrow />;
     } else {
       return (
-        <>
-          <br />
-          <div className="top-two">
-            <section className="main-header">
-              <div className="hero body">
-                <div className="section1">
-                  <h1 className="title is-size-1">{userProfile.username}</h1>
-                  <figure className="image is-128x128">
-                    <img
-                      className="is-rounded"
-                      src={userProfile.avatarUrl}
-                      alt="icon"
-                    />
-                  </figure>
-                  <br />
-                  <h1 className="subtitle location-subtitle">
-                    <i className="fas fa-map-marker-alt location-icon">
-                      <br />
-                    </i>
-                    {userProfile.city}
-                  </h1>
-                  <h1 className="subtitle">{userProfile.age}</h1>
+      <>
+                <br />
+                <div className="top-two">
+                  <section className="main-header">
+                    <div className="hero body">
+                      <div className="section1">
+                        <h1 className="title is-size-1">
+                          {userProfile.username}
+                        </h1>
+                        <figure className="image is-128x128">
+                          <img
+                            className="is-rounded"
+                            src={userProfile.avatarUrl}
+                            alt="icon"
+                          />
+                        </figure>
+                        <br />
+                        <h1 className="subtitle location-subtitle">
+                          <i className="fas fa-map-marker-alt location-icon">
+                            <br />
+                          </i>
+                          {userProfile.city}
+                        </h1>
+                        <h1 className="subtitle">{userProfile.age}</h1>
+                      </div>
+                    </div>
+                    <p className="title is-size-5 personalBio">
+                      "{userProfile.bio}..."
+                    </p>
+                  </section>
+                  <section className="second-header">
+                    <div className="hero body">
+                      <h1 className="title">Recent Activity</h1>
+                      <ul className="recent-activity-list">
+                        {displayPostsActivity()}
+                        {displayCommentsActivity()}
+                      </ul>
+                    </div>
+                  </section>
                 </div>
-              </div>
-              <p className="title is-size-5 personalBio">
-                "{userProfile.bio}..."
-              </p>
-            </section>
-            <section className="second-header">
-              <div className="hero body">
-                <h1 className="title">Recent Activity</h1>
-                <ul className="recent-activity-list">
-                  {displayPostsActivity()}
-                  {displayCommentsActivity()}
-                </ul>
-              </div>
-            </section>
-          </div>
-          <br />
-          <div className="sneakerCollectionContainer">
-            <div className="collectionTabs">
-              <div
-                onClick={prevState => {
-                  setOwnTabActiveState(!prevState.tabOwnActiveState);
-                  setWantTabActiveState(false);
-                }}
-                className={`is-large is-light tab ${
-                  tabOwnActiveState ? "selectedTab" : null
-                }`}
-              >
-                <i className="fas fa-key tabIcon"></i>
-                Own
-              </div>
-              <div
-                onClick={prevState => {
-                  setWantTabActiveState(!prevState.tabWantActiveState);
-                  setOwnTabActiveState(false);
-                }}
-                className={`is-large is-light tab ${
-                  tabWantActiveState ? "selectedTab" : null
-                }`}
-              >
-                <i className="fas fa-shopping-cart tabIcon"></i>
-                Want
-              </div>
-            </div>
-            <div className="sneakerContainer multiline">{showOwnOrWant()}</div>
-          </div>
-        </>
+                <br />
+                <div className="sneakerCollectionContainer">
+                  <div className="collectionTabs">
+                    <div
+                      onClick={prevState => {
+                        setOwnTabActiveState(!prevState.tabOwnActiveState);
+                        setWantTabActiveState(false);
+                      }}
+                      className={`is-large is-light tab ${
+                        tabOwnActiveState ? "selectedTab" : null
+                      }`}
+                    >
+                      <i className="fas fa-key tabIcon"></i>
+                      Own
+                    </div>
+                    <div
+                      onClick={prevState => {
+                        setWantTabActiveState(!prevState.tabWantActiveState);
+                        setOwnTabActiveState(false);
+                      }}
+                      className={`is-large is-light tab ${
+                        tabWantActiveState ? "selectedTab" : null
+                      }`}
+                    >
+                      <i className="fas fa-shopping-cart tabIcon"></i>
+                      Want
+                    </div>
+                  </div>
+                  <div className="sneakerContainer multiline">
+                    {showOwnOrWant()}
+                  </div>
+                </div>
+              </>
       );
     }
   };
 
 
-  return <div className="profile">{renderProfileOrRedirect()}</div>;
+  return <div>{renderProfileOrRedirect()}</div>;
 };
 
 const ProfileWithContext = () => {

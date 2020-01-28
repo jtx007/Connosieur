@@ -3,6 +3,8 @@ import { getAnotherUserProfile } from "../api/adapters";
 import { LoginContext } from '../context/loginContext'
 import ProfileSneakerTile from '../components/ProfileSneakerTile'
 import { Redirect } from '@reach/router'
+import "../styles/Profile.css";
+
 const AnotherProfile = (props) => {
     const [userProfile, setUserProfile] = useState({
       username: "",
