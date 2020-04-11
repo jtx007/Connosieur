@@ -3,6 +3,10 @@ import { userLogin, getCurrentUser } from "../api/adapters";
 import "../styles/form.css";
 import { navigate, Redirect } from '@reach/router'
 import { LoginContext } from '../context/loginContext'
+import { ToastContainer } from 'react-toastify'
+import * as toastNotifications from '../utils/toastNotifications'
+import "react-toastify/dist/ReactToastify.css";
+
 const Login = (props) => {
   const [values, setValues] = useState({ username: "", password: "" });
 
@@ -11,30 +15,23 @@ const Login = (props) => {
     setValues({ ...values, [name]: value.trim() });
   };
 
-  const handleFormSubmit = e => {
-    e.preventDefault();
-    userLogin(values)
-      .then(r => r.json())
-      .then(data => {
-        localStorage.setItem("token", data.jwt);
-        props.setToken(data.jwt);
-      })
-      .then(() => getCurrentUser())
-      .then(r => r.json())
-      .then(data => {
-        localStorage.setItem("user_id", data.id);
-        localStorage.setItem("avatar", data.avatarUrl);
-        localStorage.setItem("user", data.username)
-        
-        props.setUserId(data.id);
-        props.setAvatar(data.avatarUrl);
-        props.setUser(data.username);
-        
-      })
-      .then(() => navigate("profile"))
-      .catch(error => console.log(error))
-      ;
-    
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+    try {
+      const response = await (await userLogin(values)).json()
+      localStorage.setItem("token", response.jwt);
+      props.setToken(response.jwt);
+      const currentUser = await (await getCurrentUser()).json()
+      localStorage.setItem("user_id", currentUser.id);
+      localStorage.setItem("avatar", currentUser.avatarUrl);
+      localStorage.setItem("user", currentUser.username);
+      props.setUserId(currentUser.id);
+      props.setAvatar(currentUser.avatarUrl);
+      props.setUser(currentUser.username);
+      navigate("profile")
+    } catch (error) {
+      toastNotifications.errorNotification("Invalid Credentials, please try again")
+    }
     
   }
 
@@ -92,6 +89,7 @@ const Login = (props) => {
             </div>
           </div>
         </form>
+        <ToastContainer />
         </>
       )
     }

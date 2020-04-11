@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { userCreate } from "../api/adapters";
 import "../styles/form.css";
 import { LoginContext } from "../context/loginContext";
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
+import { userCreated, errorNotification} from '../utils/toastNotifications'
 import { Redirect, navigate } from '@reach/router'
 const Register = ({ user_id, token }) => {
   const [values, setValues] = useState({
@@ -18,11 +21,15 @@ const Register = ({ user_id, token }) => {
     setValues({ ...values, [name]: value });
   };
 
-  const handleFormSubmit = e => {
-    e.preventDefault();
-    userCreate(values)
-    .catch(error => console.log(error));
-    navigate("login");
+  const handleFormSubmit = async event => {
+    event.preventDefault()
+    try {
+      const response = await (await userCreate(values)).json()
+      console.log(response)
+    } catch (error) {
+      console.log(error.response)
+    }
+    
   };
 
   const renderFormOrRedirect = () => {
@@ -137,6 +144,7 @@ const Register = ({ user_id, token }) => {
               </div>
             </div>
           </form>
+          <ToastContainer />
         </>
       );
     }

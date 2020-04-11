@@ -1,20 +1,18 @@
 
 const baseURL = "https://connosieurbackend.herokuapp.com";
 
-
-
-
-export function userCreate(user){
-
+// "https://connosieurbackend.herokuapp.com/"
+// "http://localhost:3000/"
+export function userCreate(user) {
     return fetch(`${baseURL}/api/v1/users`, {
-        method: "POST",
-        body: JSON.stringify({user: {username: user.username, password: user.password, city: user.city, age: user.age, avatarUrl: user.avatar, bio: user.bio}}),
-        headers: {
-            "Content-Type": 'application/json',
-            "Accept": 'application/json'
-        }
-    })
-}
+            method: "POST",
+            body: JSON.stringify({user: {username: user.username, password: user.password, city: user.city, age: user.age, avatarUrl: user.avatar, bio: user.bio}}),
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'
+            }
+        })
+    }
 
 
 export function userLogin(user) {
