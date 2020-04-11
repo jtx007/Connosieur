@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import { fetchSinglePost, addComment, updatePost } from "../api/adapters";
 import { LoginContext } from "../context/loginContext";
 import { ToastContainer } from "react-toastify";
@@ -67,15 +67,23 @@ const Post = props => {
     setCommentValue(value);
   };
 
-  const removePostButton = (postId) => {
-
+  const removePostButton = async (id) => {
+    try {
+      await deletePost(id)
+      navigate("/posts")
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   const showRemovePostButton = () => {
     if (singlePost.user === props.user) {
-      return <button ></button>
+      return <button onClick={() => removePostButton(singlePost.id)} className="removePostButton button is-danger">X</button>;
+    } else {
+      return null 
     }
   }
+
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -111,6 +119,7 @@ const Post = props => {
   return (
     <div className="post section container">
       <div className="card">
+        {showRemovePostButton()}
         <h1 className="title">{singlePost.title}</h1>
         <figure className="image is-64x64">
           <Link to={`/profile/${singlePost.user}`}>

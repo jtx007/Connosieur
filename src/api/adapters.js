@@ -70,14 +70,15 @@ export function updatePost(post, likes, dislikes, userId) {
     });
 }
 
-export function deletePost(postId) {
-    return fetch(`${baseURL}/api/v1/posts/${postId}`), {
+export function deletePost(id) {
+    return fetch(`${baseURL}/api/v1/posts/${id}`, {
         "method": "DELETE",
         "headers": {
             "Content-Type": 'application/json',
+            "Accept": 'application/json',
             "Authorization": localStorage.token
         }
-    }
+    })
 }
 
 

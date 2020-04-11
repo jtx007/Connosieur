@@ -17,11 +17,14 @@ const NewPost = (props) => {
       createNewPost({ ...postValues, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        createPost(postValues, props.user_id)
-        navigate("/posts")
-
+        try {
+           await createPost(postValues, props.user_id)
+            navigate("/posts");
+        } catch (error) {
+            console.log(error)
+        }
        
     }
 
