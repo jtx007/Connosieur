@@ -1,8 +1,8 @@
 
 const baseURL = "https://connosieurbackend.herokuapp.com";
 
-// "https://connosieurbackend.herokuapp.com/"
-// "http://localhost:3000/"
+// "https://connosieurbackend.herokuapp.com"
+// "http://localhost:3000"
 export function userCreate(user) {
     return fetch(`${baseURL}/api/v1/users`, {
             method: "POST",
@@ -70,8 +70,8 @@ export function updatePost(post, likes, dislikes, userId) {
     });
 }
 
-export function deletePost(id) {
-    return fetch(`${baseURL}/api/v1/posts/${id}`, {
+export function deletePost(postId) {
+    return fetch(`${baseURL}/api/v1/posts/${postId}`, {
         "method": "DELETE",
         "headers": {
             "Content-Type": 'application/json',
@@ -80,6 +80,18 @@ export function deletePost(id) {
         }
     })
 }
+
+export function deleteComment(commentId) {
+  return fetch(`${baseURL}/api/v1/comments/${commentId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": localStorage.token,
+    },
+  });
+}
+
 
 
 export function addToWant(shoeId, userId) {

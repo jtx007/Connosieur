@@ -4,7 +4,7 @@ import { fetchSinglePost, addComment, updatePost } from "../api/adapters";
 import { LoginContext } from "../context/loginContext";
 import { ToastContainer } from "react-toastify";
 import {commentSuccess, errorNotification} from "../utils/toastNotifications";
-import { deletePost } from '../api/adapters'
+import { deletePost, deleteComment } from '../api/adapters'
 import Comment from "../components/Comment";
 import "../styles/Post.css";
 
@@ -67,18 +67,26 @@ const Post = props => {
     setCommentValue(value);
   };
 
+  
+
   const removePostButton = async (id) => {
     try {
+       singlePost.comments.forEach(async (comment) => {
+         await deleteComment(comment.id)
+      })
       await deletePost(id)
+
       navigate("/posts")
     } catch(error) {
       console.log(error)
     }
   }
 
+  
+
   const showRemovePostButton = () => {
     if (singlePost.user === props.user) {
-      return <button onClick={() => removePostButton(singlePost.id)} className="removePostButton button is-danger">X</button>;
+      return <button onClick={() => removePostButton(singlePost.id)} className="removePostButton button is-danger">Delete Post</button>;
     } else {
       return null 
     }
@@ -97,6 +105,7 @@ const Post = props => {
       });
       commentSuccess()
       setPost({ ...singlePost, comments: newComments });
+      setCommentValue("")
     } catch (error) {
       console.log(error);
       errorNotification(error.message)
