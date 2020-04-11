@@ -46,7 +46,7 @@ const Navbar = ({token, user_id, setUser, setToken, setAvatar}) => {
 
     
     return (
-        <nav style={{paddingRight: "10px"}}  className="navbar is-dark" role="navigation" aria-label="main-navigation">
+        <nav  className="navbar is-dark" role="navigation" aria-label="main-navigation">
             <div className="navbar-brand is-large">
                 <Link to="/" className="navbar-item">
                     <img src={dunk} alt="nike dunk"/>
