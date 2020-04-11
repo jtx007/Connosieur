@@ -34,7 +34,7 @@ const App = () => {
                 }}
                 >
                 <Navbar />
-            <Router>
+            <Router primary={false}>
 
                 <Home path="/"  />
                 <Profile path="profile"   />
