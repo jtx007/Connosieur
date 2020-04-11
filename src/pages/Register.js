@@ -4,7 +4,7 @@ import "../styles/form.css";
 import { LoginContext } from "../context/loginContext";
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
-import { userCreated, errorNotification} from '../utils/toastNotifications'
+import { errorNotification} from '../utils/toastNotifications'
 import { Redirect, navigate } from '@reach/router'
 const Register = ({ user_id, token }) => {
   const [values, setValues] = useState({
@@ -24,10 +24,12 @@ const Register = ({ user_id, token }) => {
   const handleFormSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await (await userCreate(values)).json()
+      await (await userCreate(values)).json()
       navigate("login")
     } catch (error) {
-      console.log(error.response)
+      
+      errorNotification("Error, User not created")
+
     }
     
   };
