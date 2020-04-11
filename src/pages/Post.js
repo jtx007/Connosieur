@@ -4,7 +4,7 @@ import { fetchSinglePost, addComment, updatePost } from "../api/adapters";
 import { LoginContext } from "../context/loginContext";
 import { ToastContainer } from "react-toastify";
 import {commentSuccess, errorNotification} from "../utils/toastNotifications";
-
+import { deletePost } from '../api/adapters'
 import Comment from "../components/Comment";
 import "../styles/Post.css";
 
@@ -66,6 +66,16 @@ const Post = props => {
     const { value } = e.target;
     setCommentValue(value);
   };
+
+  const removePostButton = (postId) => {
+
+  }
+
+  const showRemovePostButton = () => {
+    if (singlePost.user === props.user) {
+      return <button ></button>
+    }
+  }
 
   const handleSubmit = async e => {
     e.preventDefault();

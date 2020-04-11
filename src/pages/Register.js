@@ -25,7 +25,7 @@ const Register = ({ user_id, token }) => {
     event.preventDefault()
     try {
       const response = await (await userCreate(values)).json()
-      console.log(response)
+      navigate("login")
     } catch (error) {
       console.log(error.response)
     }

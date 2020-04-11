@@ -70,6 +70,16 @@ export function updatePost(post, likes, dislikes, userId) {
     });
 }
 
+export function deletePost(postId) {
+    return fetch(`${baseURL}/api/v1/posts/${postId}`), {
+        "method": "DELETE",
+        "headers": {
+            "Content-Type": 'application/json',
+            "Authorization": localStorage.token
+        }
+    }
+}
+
 
 export function addToWant(shoeId, userId) {
     return fetch(`${baseURL}/api/v1/want_sneakers`, {
