@@ -49,6 +49,18 @@ The pivotal piece of this project is the database of sneakers.  This data was sc
 
 Here users can add their favorite sneakers to their "OWN" or "WANTS" lists.  The user then can engage in discussions with other users about sneakers or any other related topics by clicking on the threads button in the navbar or after creating a new post via their profile page.  
 
+![Profile](/src/assets/profile.png)
+
+After adding your favorite sneakers to your own's and wants, you can see them displayed on your user profile, which displays your sneakers as well as your recent activity
+
+![Posts](/src/assets/posts.png)
+
+Here you can see everyone's posts with their likes and dislikes as well as create your own post via the link and accompanying form
+
+![Comments](/src/assets/comments.png)
+
+And you can comment on these posts and have conversations with other users on the site.
+
 If there are any issues or concerns or if you would like to provide some feedback, please do not hesistate to email me at
 
 #### jamesjacobthomas7@gmail.com
